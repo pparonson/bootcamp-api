@@ -18,6 +18,13 @@ app.get("/api/v1/bootcamps", (req, res) => {
     res.status(200).json({ success: true, msg: "show all bootcamps" });
 });
 
+app.get("/api/v1/bootcamps/:id", (req, res) => {
+    res.status(200).json({
+        success: true,
+        msg: `show bootcamp with id: ${req.params.id}`
+    });
+});
+
 app.post("/api/v1/bootcamps", (req, res) => {
     res.status(200).json({
         success: true,
@@ -25,10 +32,17 @@ app.post("/api/v1/bootcamps", (req, res) => {
     });
 });
 
-app.put("/api/v1/bootcamps:id", (req, res) => {
+app.put("/api/v1/bootcamps/:id", (req, res) => {
     res.status(200).json({
         success: true,
         msg: `edit bootcamp: ${req.params.id}`
+    });
+});
+
+app.delete("/api/v1/bootcamps/:id", (req, res) => {
+    res.status(200).json({
+        success: true,
+        msg: `delete bootcamp: ${req.params.id}`
     });
 });
 
